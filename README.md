@@ -32,7 +32,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: ssplatt/pycqa-tools:38
+      - image: ssplatt/pycqa-tools:3.8
     working_directory: ~/repo
     steps:
       - checkout
