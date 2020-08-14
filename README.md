@@ -22,3 +22,28 @@ Docker Hub: https://hub.docker.com/repository/docker/ssplatt/pycqa-tools
   - https://github.com/PyCQA/prospector and all modules
 - Python 3.8 contains:
   - https://github.com/PyCQA/prospector and all modules
+
+## Example usage
+
+```yaml 
+#.circleci/config.yml
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: ssplatt/pycqa-tools:38
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: prospector with all modules
+          command: |
+            prospector --with-tool pyroma vulture frosted mypy bandit
+
+workflows:
+  version: 2
+  default:
+    jobs:
+      - test
+```
