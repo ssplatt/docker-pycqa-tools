@@ -16,17 +16,32 @@ workflows:
     jobs:
       - docker/publish:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
+          docker-context: python2/.
           update-description: true
+          tag: 2,2.7,2-$CIRCLE_BUILD_NUM,2.7-$CIRCLE_BUILD_NUM
+          context: dockerhub
+      - docker/publish:
+          image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
+          docker-context: python37/.
+          update-description: true
+          tag: 3.7,3.7-$CIRCLE_BUILD_NUM
+          context: dockerhub
+      - docker/publish:
+          image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
+          docker-context: python38/.
+          update-description: true
+          tag: latest,3,3.8,3-$CIRCLE_BUILD_NUM,3.8-$CIRCLE_BUILD_NUM
           context: dockerhub
   default:
     jobs:
       - docker/hadolint:
+          dockerfiles: 'python2/Dockerfile:python37/Dockerfile:python38/Dockerfile'
           ignore-rules: DL3004
       - docker/publish:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           docker-context: python2/.
           update-description: true
-          tag: 2,2-$CIRCLE_SHA1,2.7,2.7-$CIRCLE_SHA1
+          tag: 2,2.7,2-$CIRCLE_SHA1,2.7-$CIRCLE_SHA1,2-$CIRCLE_BUILD_NUM,2.7-$CIRCLE_BUILD_NUM
           requires:
             - docker/hadolint
           context: dockerhub
@@ -38,7 +53,7 @@ workflows:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           docker-context: python37/.
           update-description: true
-          tag: 3.7,3.7-$CIRCLE_SHA1
+          tag: 3.7,3.7-$CIRCLE_SHA1,3.7-$CIRCLE_BUILD_NUM
           requires:
             - docker/hadolint
           context: dockerhub
@@ -50,7 +65,7 @@ workflows:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           docker-context: python38/.
           update-description: true
-          tag: latest,3,3.8,3-$CIRCLE_SHA1,3.8-$CIRCLE_SHA1
+          tag: latest,3,3.8,3-$CIRCLE_SHA1,3-$CIRCLE_BUILD_NUM,3.8-$CIRCLE_SHA1,3.8-$CIRCLE_BUILD_NUM
           requires:
             - docker/hadolint
           context: dockerhub
