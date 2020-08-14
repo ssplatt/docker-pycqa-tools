@@ -6,7 +6,7 @@ RUN pip3 install --prefix=/install --no-warn-script-location \
     awscli \
     boto3 \
     pytest \
-    prospector[with_everything]
+    "prospector[with_everything]"
 USER circleci
 
 FROM base AS runner
