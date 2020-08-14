@@ -1,8 +1,6 @@
-FROM cimg/python:2.7 AS base
-
-FROM base AS builder
-USER root
-RUN pip install --prefix=/install --no-warn-script-location \
+FROM cimg/python:2.7
+LABEL maintainer="Brett Taylor <github.com/ssplatt>"
+RUN pip install \
     awscli \
     boto3 \
     pylint \
@@ -15,10 +13,5 @@ RUN pip install --prefix=/install --no-warn-script-location \
     pyroma \
     vulture \
     frosted \
-    bandit
-USER circleci
-
-FROM base AS runner
-LABEL maintainer="Brett Taylor <github.com/ssplatt>"
-COPY --from=builder /install /usr/local
-USER circleci
+    bandit \
+    && rm -rf ~/.cache/pip
