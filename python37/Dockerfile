@@ -7,7 +7,9 @@ RUN pip3 install --prefix=/install --no-warn-script-location \
     boto3 \
     pytest \
     prospector[with_everything]
+USER circleci
 
 FROM base AS runner
-MAINTAINER "Brett Taylor <github.com/ssplatt>"
+LABEL maintainer="Brett Taylor <github.com/ssplatt>"
 COPY --from=builder /install /usr/local
+USER circleci

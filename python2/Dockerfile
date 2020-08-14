@@ -5,7 +5,6 @@ USER root
 RUN pip install --prefix=/install --no-warn-script-location \
     awscli \
     boto3 \
-    pytest \
     pylint \
     pep8 \
     pyflakes \
@@ -17,7 +16,9 @@ RUN pip install --prefix=/install --no-warn-script-location \
     vulture \
     frosted \
     bandit
+USER circleci
 
 FROM base AS runner
-MAINTAINER "Brett Taylor <github.com/ssplatt>"
+LABEL maintainer="Brett Taylor <github.com/ssplatt>"
 COPY --from=builder /install /usr/local
+USER circleci

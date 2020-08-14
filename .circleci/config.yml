@@ -36,7 +36,7 @@ workflows:
     jobs:
       - docker/hadolint:
           dockerfiles: 'python2/Dockerfile:python37/Dockerfile:python38/Dockerfile'
-          ignore-rules: DL3004
+          ignore-rules: 'DL3004,DL3013'
       - docker/publish:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           docker-context: python2/.
