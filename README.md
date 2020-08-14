@@ -39,7 +39,12 @@ jobs:
       - run:
           name: prospector with all modules
           command: |
-            prospector --with-tool pyroma --with-tool vulture --with-tool frosted --with-tool mypy --with-tool bandit
+            prospector \
+              --with-tool pyroma \
+              --with-tool vulture \
+              --with-tool frosted \
+              --with-tool mypy \
+              --with-tool bandit
 
 workflows:
   version: 2
