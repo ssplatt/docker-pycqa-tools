@@ -9,6 +9,7 @@ RUN pip install --prefix=/install --no-warn-script-location \
     pylint \
     pep8 \
     pyflakes \
+    flake8 \
     mccabe \
     dodgy \
     pydocstyle \
