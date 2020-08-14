@@ -45,6 +45,10 @@ workflows:
           requires:
             - docker/hadolint
           context: dockerhub
+          filters:
+             branches:
+               only:
+                 - master
       - docker/publish:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: python37
