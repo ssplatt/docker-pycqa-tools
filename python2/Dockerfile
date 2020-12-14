@@ -1,6 +1,6 @@
 FROM cimg/python:2.7
 LABEL maintainer="Brett Taylor <github.com/ssplatt>"
-RUN pip install \
+RUN pip install --no-cache-dir \
     awscli \
     boto3 \
     pylint \
@@ -13,5 +13,5 @@ RUN pip install \
     pyroma \
     vulture \
     frosted \
-    bandit \
+    bandit==1.6.2 \
     && rm -rf ~/.cache/pip
