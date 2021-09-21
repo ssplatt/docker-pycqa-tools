@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  docker: circleci/docker@1.4.0
+  docker: circleci/docker@1
 
 workflows:
   version: 2
@@ -30,7 +30,13 @@ workflows:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: python38
           update-description: true
-          tag: latest,3,3.8,3-$CIRCLE_BUILD_NUM,3.8-$CIRCLE_BUILD_NUM
+          tag: 3.8,3.8-$CIRCLE_BUILD_NUM
+          context: dockerhub
+      - docker/publish:
+          image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
+          path: python39
+          update-description: true
+          tag: latest,3,3.9,3-$CIRCLE_BUILD_NUM,3.9-$CIRCLE_BUILD_NUM
           context: dockerhub
   default:
     jobs:
@@ -65,7 +71,19 @@ workflows:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: python38
           update-description: true
-          tag: latest,3,3.8,3-$CIRCLE_SHA1,3-$CIRCLE_BUILD_NUM,3.8-$CIRCLE_SHA1,3.8-$CIRCLE_BUILD_NUM
+          tag: 3.8,3.8-$CIRCLE_SHA1,3.8-$CIRCLE_BUILD_NUM
+          requires:
+            - docker/hadolint
+          context: dockerhub
+          filters:
+            branches:
+              only:
+                - master
+      - docker/publish:
+          image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
+          path: python38
+          update-description: true
+          tag: latest,3,3-$CIRCLE_SHA1,3-$CIRCLE_BUILD_NUM,3.9,3.9-$CIRCLE_SHA1,3.9-$CIRCLE_BUILD_NUM
           requires:
             - docker/hadolint
           context: dockerhub
