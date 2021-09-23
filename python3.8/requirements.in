@@ -1,0 +1,4 @@
+awscli
+boto3
+pytest
+prospector[with_everything]

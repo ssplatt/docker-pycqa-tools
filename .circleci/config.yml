@@ -16,25 +16,25 @@ workflows:
     jobs:
       - docker/publish:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
-          path: python2
+          path: python2.7
           update-description: true
           tag: 2,2.7,2-$CIRCLE_BUILD_NUM,2.7-$CIRCLE_BUILD_NUM
           context: dockerhub
       - docker/publish:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
-          path: python37
+          path: python3.7
           update-description: true
           tag: 3.7,3.7-$CIRCLE_BUILD_NUM
           context: dockerhub
       - docker/publish:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
-          path: python38
+          path: python3.8
           update-description: true
           tag: 3.8,3.8-$CIRCLE_BUILD_NUM
           context: dockerhub
       - docker/publish:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
-          path: python39
+          path: python3.9
           update-description: true
           tag: latest,3,3.9,3-$CIRCLE_BUILD_NUM,3.9-$CIRCLE_BUILD_NUM
           context: dockerhub
@@ -45,7 +45,7 @@ workflows:
           ignore-rules: 'DL3004,DL3013'
       - docker/publish:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
-          path: python2
+          path: python2.7
           update-description: true
           tag: 2,2.7,2-$CIRCLE_SHA1,2.7-$CIRCLE_SHA1,2-$CIRCLE_BUILD_NUM,2.7-$CIRCLE_BUILD_NUM
           requires:
@@ -57,7 +57,7 @@ workflows:
                  - master
       - docker/publish:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
-          path: python37
+          path: python3.7
           update-description: true
           tag: 3.7,3.7-$CIRCLE_SHA1,3.7-$CIRCLE_BUILD_NUM
           requires:
@@ -69,7 +69,7 @@ workflows:
                 - master
       - docker/publish:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
-          path: python38
+          path: python3.8
           update-description: true
           tag: 3.8,3.8-$CIRCLE_SHA1,3.8-$CIRCLE_BUILD_NUM
           requires:
@@ -81,7 +81,7 @@ workflows:
                 - master
       - docker/publish:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
-          path: python38
+          path: python3.9
           update-description: true
           tag: latest,3,3-$CIRCLE_SHA1,3-$CIRCLE_BUILD_NUM,3.9,3.9-$CIRCLE_SHA1,3.9-$CIRCLE_BUILD_NUM
           requires:
