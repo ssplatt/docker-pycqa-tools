@@ -13,7 +13,7 @@ while read -r TARGET; do
     echo $TARGET
     PYDIR=$(basename "$TARGET")
     cd "$PYDIR" || exit
-    BASE_VERSION=${PYDIR:(-3)}
+    BASE_VERSION="${PYDIR}"
     VERSION=$(pyenv install -l | cut -d " " -f 3 | grep -E "^$BASE_VERSION" | sort -Vr | head -1)
     VENV_NAME="${BASE_NAME}-${VERSION}"
 

@@ -1,102 +1,104 @@
-astroid==2.8.0
+astroid==2.11.6
     # via
     #   pylint
     #   pylint-celery
     #   pylint-flask
     #   requirements-detector
-attrs==21.2.0
+attrs==21.4.0
     # via pytest
-awscli==1.20.46
+awscli==1.25.18
     # via -r ./requirements.in
-bandit==1.7.0
+bandit==1.7.4
     # via prospector
-boto3==1.18.46
+boto3==1.24.18
     # via -r ./requirements.in
-botocore==1.21.46
+botocore==1.27.18
     # via
     #   awscli
     #   boto3
     #   s3transfer
-certifi==2021.5.30
+build==0.8.0
+    # via pyroma
+certifi==2022.6.15
     # via requests
-charset-normalizer==2.0.6
+charset-normalizer==2.0.12
     # via requests
-colorama==0.4.3
+colorama==0.4.4
     # via awscli
-docutils==0.15.2
+dill==0.3.5.1
+    # via pylint
+docutils==0.16
     # via
     #   awscli
     #   pyroma
 dodgy==0.2.1
     # via prospector
-flake8==3.9.2
+flake8==4.0.1
     # via flake8-polyfill
 flake8-polyfill==1.0.2
     # via pep8-naming
 frosted==1.4.1
     # via prospector
-gitdb==4.0.7
+gitdb==4.0.9
     # via gitpython
-gitpython==3.1.24
+gitpython==3.1.27
     # via bandit
-idna==3.2
+idna==3.3
     # via requests
-importlib-metadata==4.8.1
-    # via
-    #   flake8
-    #   pluggy
-    #   pytest
-    #   stevedore
 iniconfig==1.1.1
     # via pytest
-isort==5.9.3
+isort==5.10.1
     # via pylint
-jmespath==0.10.0
+jmespath==1.0.1
     # via
     #   boto3
     #   botocore
-lazy-object-proxy==1.6.0
+lazy-object-proxy==1.7.1
     # via astroid
 mccabe==0.6.1
     # via
     #   flake8
     #   prospector
     #   pylint
-mypy==0.910
+mypy==0.961
     # via prospector
 mypy-extensions==0.4.3
     # via mypy
-packaging==21.0
-    # via pytest
-pbr==5.6.0
+packaging==21.3
+    # via
+    #   build
+    #   pytest
+pbr==5.9.0
     # via stevedore
+pep517==0.12.0
+    # via build
 pep8-naming==0.10.0
     # via prospector
 pies==2.6.7
     # via frosted
-platformdirs==2.3.0
+platformdirs==2.5.2
     # via pylint
 pluggy==1.0.0
     # via pytest
-prospector[with_everything]==1.5.1
+prospector[with_everything]==1.7.7
     # via -r ./requirements.in
-py==1.10.0
+py==1.11.0
     # via pytest
 pyasn1==0.4.8
     # via rsa
-pycodestyle==2.7.0
+pycodestyle==2.8.0
     # via
     #   flake8
     #   prospector
 pydocstyle==6.1.1
     # via prospector
-pyflakes==2.3.1
+pyflakes==2.4.0
     # via
     #   flake8
     #   prospector
-pygments==2.10.0
+pygments==2.12.0
     # via pyroma
-pylint==2.11.1
+pylint==2.14.3
     # via
     #   prospector
     #   pylint-celery
@@ -105,21 +107,21 @@ pylint==2.11.1
     #   pylint-plugin-utils
 pylint-celery==0.3
     # via prospector
-pylint-django==2.4.4
+pylint-django==2.5.3
     # via prospector
 pylint-flask==0.6
     # via prospector
-pylint-plugin-utils==0.6
+pylint-plugin-utils==0.7
     # via
     #   prospector
     #   pylint-celery
     #   pylint-django
     #   pylint-flask
-pyparsing==2.4.7
+pyparsing==3.0.9
     # via packaging
-pyroma==3.2
+pyroma==4.0
     # via prospector
-pytest==6.2.5
+pytest==7.1.2
     # via -r ./requirements.in
 python-dateutil==2.8.2
     # via botocore
@@ -128,56 +130,51 @@ pyyaml==5.4.1
     #   awscli
     #   bandit
     #   prospector
-requests==2.26.0
+requests==2.28.0
     # via pyroma
 requirements-detector==0.7
     # via prospector
 rsa==4.7.2
     # via awscli
-s3transfer==0.5.0
+s3transfer==0.6.0
     # via
     #   awscli
     #   boto3
 setoptconf-tmp==0.3.1
     # via prospector
 six==1.16.0
-    # via
-    #   bandit
-    #   python-dateutil
-smmap==4.0.0
+    # via python-dateutil
+smmap==5.0.0
     # via gitdb
-snowballstemmer==2.1.0
+snowballstemmer==2.2.0
     # via pydocstyle
-stevedore==3.4.0
+stevedore==3.5.0
     # via bandit
 toml==0.10.2
     # via
-    #   mypy
     #   prospector
+    #   vulture
+tomli==2.0.1
+    # via
+    #   build
+    #   mypy
+    #   pep517
     #   pylint
     #   pytest
-    #   vulture
-typed-ast==1.4.3
-    # via
-    #   astroid
-    #   mypy
-typing-extensions==3.10.0.2
-    # via
-    #   astroid
-    #   gitpython
-    #   importlib-metadata
-    #   mypy
-    #   pylint
-urllib3==1.26.7
+tomlkit==0.11.0
+    # via pylint
+typing-extensions==4.2.0
+    # via mypy
+urllib3==1.26.9
     # via
     #   botocore
     #   requests
-vulture==2.3
+vulture==2.4
     # via prospector
-wrapt==1.12.1
+wheel==0.37.1
+    # via pyroma
+wrapt==1.14.1
     # via astroid
-zipp==3.5.0
-    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
