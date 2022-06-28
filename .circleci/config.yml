@@ -20,7 +20,6 @@ workflows:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: '3.7'
           docker-context: '3.7/.'
-          update-description: true
           tag: 3.7,3.7-$CIRCLE_BUILD_NUM
           context: dockerhub
       - docker/publish:
@@ -29,7 +28,6 @@ workflows:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: '3.8'
           docker-context: '3.8/.'
-          update-description: true
           tag: 3.8,3.8-$CIRCLE_BUILD_NUM
           context: dockerhub
       - docker/publish:
@@ -38,7 +36,6 @@ workflows:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: '3.9'
           docker-context: '3.9/.'
-          update-description: true
           tag: 3.9,3-$CIRCLE_BUILD_NUM,3.9-$CIRCLE_BUILD_NUM
           context: dockerhub
       - docker/publish:
@@ -47,7 +44,6 @@ workflows:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: '3.10'
           docker-context: '3.10/.'
-          update-description: true
           tag: latest,3,3.10,3-$CIRCLE_BUILD_NUM,3.10-$CIRCLE_BUILD_NUM
           context: dockerhub
   default:
@@ -61,7 +57,6 @@ workflows:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: '3.7'
           docker-context: '3.7/.'
-          update-description: true
           tag: 3.7,3.7-$CIRCLE_SHA1,3.7-$CIRCLE_BUILD_NUM
           requires:
             - docker/hadolint
@@ -76,7 +71,6 @@ workflows:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: '3.8'
           docker-context: '3.8/.'
-          update-description: true
           tag: 3.8,3.8-$CIRCLE_SHA1,3.8-$CIRCLE_BUILD_NUM
           requires:
             - docker/hadolint
@@ -91,7 +85,6 @@ workflows:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: '3.9'
           docker-context: '3.9/.'
-          update-description: true
           tag: 3.9,3.9-$CIRCLE_SHA1,3.9-$CIRCLE_BUILD_NUM
           requires:
             - docker/hadolint
@@ -106,7 +99,6 @@ workflows:
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: '3.10'
           docker-context: '3.10/.'
-          update-description: true
           tag: latest,3,3-$CIRCLE_SHA1,3-$CIRCLE_BUILD_NUM,3.10,3.10-$CIRCLE_SHA1,3.10-$CIRCLE_BUILD_NUM
           requires:
             - docker/hadolint
