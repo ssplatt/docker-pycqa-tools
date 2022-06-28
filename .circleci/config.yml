@@ -16,7 +16,6 @@ workflows:
     jobs:
       - docker/publish:
           image: pycqa-tools
-          registry: $CIRCLE_PROJECT_USERNAME
           path: '3.7'
           docker-context: '3.7'
           update-description: true
@@ -24,7 +23,6 @@ workflows:
           context: dockerhub
       - docker/publish:
           image: pycqa-tools
-          registry: $CIRCLE_PROJECT_USERNAME
           path: '3.8'
           docker-context: '3.8'
           update-description: true
@@ -32,7 +30,6 @@ workflows:
           context: dockerhub
       - docker/publish:
           image: pycqa-tools
-          registry: $CIRCLE_PROJECT_USERNAME
           path: '3.9'
           docker-context: '3.9'
           update-description: true
@@ -40,7 +37,6 @@ workflows:
           context: dockerhub
       - docker/publish:
           image: pycqa-tools
-          registry: $CIRCLE_PROJECT_USERNAME
           path: '3.10'
           docker-context: '3.10'
           update-description: true
@@ -53,7 +49,6 @@ workflows:
           ignore-rules: 'DL3004,DL3013'
       - docker/publish:
           image: pycqa-tools
-          registry: $CIRCLE_PROJECT_USERNAME
           path: '3.7'
           docker-context: '3.7'
           update-description: true
@@ -67,7 +62,6 @@ workflows:
                 - master
       - docker/publish:
           image: pycqa-tools
-          registry: $CIRCLE_PROJECT_USERNAME
           path: '3.8'
           docker-context: '3.8'
           update-description: true
@@ -81,7 +75,6 @@ workflows:
                 - master
       - docker/publish:
           image: pycqa-tools
-          registry: $CIRCLE_PROJECT_USERNAME
           path: '3.9'
           docker-context: 3'.9'
           update-description: true
@@ -95,7 +88,6 @@ workflows:
                 - master
       - docker/publish:
           image: pycqa-tools
-          registry: $CIRCLE_PROJECT_USERNAME
           path: '3.10'
           docker-context: '3.10'
           update-description: true
