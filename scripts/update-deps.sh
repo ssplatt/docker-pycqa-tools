@@ -15,7 +15,7 @@ R_OUT_PATH=./requirements.txt
 while read -r TARGET; do
     DIR=$(basename "$TARGET")
     cd "$DIR" || exit
-    BASE_VERSION=${DIR:(-3)}
+    BASE_VERSION=${DIR}
     VERSION=$(pyenv install -l | cut -d " " -f 3 | grep -E "^$BASE_VERSION" | sort -Vr | head -1)
     VENV_NAME="${BASE_NAME}-${VERSION}"
     rm -rf "${R_OUT_PATH}"

@@ -1,4 +1,4 @@
-FROM cimg/python:2.7
+FROM cimg/python:3.10
 WORKDIR /home/circleci
 COPY requirements.txt .
 RUN pip install --no-cache-dir \
