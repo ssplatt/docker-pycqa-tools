@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  docker: circleci/docker@2.1.1
+  docker: circleci/docker@2
 
 workflows:
   version: 2
@@ -17,6 +17,9 @@ workflows:
       - docker/publish:
           executor: docker/docker
           use-remote-docker: true
+          use-buildkit: true
+          remote-docker-version: 20.10.18
+          extra_build_args: --platform=linux/amd64,linux/arm64
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: '3.7'
           docker-context: '3.7/.'
@@ -25,6 +28,9 @@ workflows:
       - docker/publish:
           executor: docker/docker
           use-remote-docker: true
+          use-buildkit: true
+          remote-docker-version: 20.10.18
+          extra_build_args: --platform=linux/amd64,linux/arm64
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: '3.8'
           docker-context: '3.8/.'
@@ -33,6 +39,9 @@ workflows:
       - docker/publish:
           executor: docker/docker
           use-remote-docker: true
+          use-buildkit: true
+          remote-docker-version: 20.10.18
+          extra_build_args: --platform=linux/amd64,linux/arm64
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: '3.9'
           docker-context: '3.9/.'
@@ -41,6 +50,9 @@ workflows:
       - docker/publish:
           executor: docker/docker
           use-remote-docker: true
+          use-buildkit: true
+          remote-docker-version: 20.10.18
+          extra_build_args: --platform=linux/amd64,linux/arm64
           image: $CIRCLE_PROJECT_USERNAME/pycqa-tools
           path: '3.10'
           docker-context: '3.10/.'
