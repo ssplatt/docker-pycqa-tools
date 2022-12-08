@@ -1,7 +1,8 @@
 FROM cimg/python:3.8
 WORKDIR /tmp
 COPY requirements.txt .
-RUN which pyenv \
+RUN echo "$PATH" \
+    && which pyenv \
     && pyenv versions \
     && which pip \
     && pip --version \
