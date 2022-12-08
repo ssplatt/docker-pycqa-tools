@@ -10,7 +10,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 while read -r TARGET; do
-    echo $TARGET
+    echo "$TARGET"
     PYDIR=$(basename "$TARGET")
     cd "$PYDIR" || exit
     BASE_VERSION="${PYDIR}"
