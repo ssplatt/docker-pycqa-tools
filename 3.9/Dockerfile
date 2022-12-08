@@ -1,5 +1,5 @@
 FROM cimg/python:3.9
-WORKDIR /home/circleci
+WORKDIR /tmp
 COPY requirements.txt .
 RUN which pyenv \
     && pyenv versions \
@@ -8,5 +8,5 @@ RUN which pyenv \
     && which python \
     && python --version \
     pip install --no-cache-dir \
-    -r requirements.txt \
-    && rm requirements.txt
+    -r requirements.txt
+WORKDIR /home/circleci/project
