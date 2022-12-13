@@ -25,6 +25,7 @@ while read -r TARGET; do
     which pip
     pip install --upgrade pip setuptools wheel pip-tools
     pip-compile --no-header --no-emit-index-url --rebuild --verbose \
+        --resolver=backtracking \
         --output-file "${R_OUT_PATH}" \
         "${R_IN_PATH}"
     pip-sync "${R_OUT_PATH}"
