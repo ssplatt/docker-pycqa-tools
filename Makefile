@@ -5,3 +5,9 @@ hadolint:
 
 build:
 	./scripts/docker-build.sh
+
+update-deps:
+	./scripts/update-deps.sh
+
+create-virtualenv:
+	./scripts/create-virtualenv.sh

@@ -1,4 +1,1 @@
-awscli
-boto3
-pytest
-prospector[with_everything]
+prospector[with_everything]<1.8.0
