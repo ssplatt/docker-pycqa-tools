@@ -30,12 +30,6 @@ gitpython==3.1.29
     # via bandit
 idna==3.4
     # via requests
-importlib-metadata==4.2.0
-    # via
-    #   build
-    #   flake8
-    #   pep517
-    #   stevedore
 isort==5.11.1
     # via pylint
 lazy-object-proxy==1.8.0
@@ -64,7 +58,7 @@ pies==2.6.7
 platformdirs==2.6.0
     # via pylint
 prospector[with_everything]==1.7.7
-    # via -r ./requirements.in
+    # via -r requirements.in
 pycodestyle==2.8.0
     # via
     #   flake8
@@ -102,7 +96,7 @@ pyyaml==6.0
     # via
     #   bandit
     #   prospector
-requests==2.28.1
+requests==2.31.0
     # via pyroma
 requirements-detector==0.7
     # via prospector
@@ -118,27 +112,12 @@ toml==0.10.2
     # via
     #   prospector
     #   vulture
-tomli==2.0.1
-    # via
-    #   build
-    #   mypy
-    #   pep517
-    #   pylint
 tomlkit==0.11.6
     # via pylint
 trove-classifiers==2022.12.1
     # via pyroma
-typed-ast==1.5.4
-    # via
-    #   astroid
-    #   mypy
 typing-extensions==4.4.0
-    # via
-    #   astroid
-    #   gitpython
-    #   importlib-metadata
-    #   mypy
-    #   pylint
+    # via mypy
 urllib3==1.26.13
     # via requests
 vulture==2.6
@@ -147,10 +126,6 @@ wheel==0.38.4
     # via pyroma
 wrapt==1.14.1
     # via astroid
-zipp==3.11.0
-    # via
-    #   importlib-metadata
-    #   pep517
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
