@@ -58,7 +58,7 @@ pies==2.6.7
 platformdirs==2.6.0
     # via pylint
 prospector[with_everything]==1.7.7
-    # via -r ./requirements.in
+    # via -r requirements.in
 pycodestyle==2.8.0
     # via
     #   flake8
@@ -69,7 +69,7 @@ pyflakes==2.4.0
     # via
     #   flake8
     #   prospector
-pygments==2.13.0
+pygments==2.15.0
     # via pyroma
 pylint==2.15.8
     # via
@@ -112,12 +112,6 @@ toml==0.10.2
     # via
     #   prospector
     #   vulture
-tomli==2.0.1
-    # via
-    #   build
-    #   mypy
-    #   pep517
-    #   pylint
 tomlkit==0.11.6
     # via pylint
 trove-classifiers==2022.12.1
