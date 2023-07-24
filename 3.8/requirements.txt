@@ -26,7 +26,7 @@ frosted==1.4.1
     # via prospector
 gitdb==4.0.10
     # via gitpython
-gitpython==3.1.29
+gitpython==3.1.30
     # via bandit
 idna==3.4
     # via requests
@@ -58,7 +58,7 @@ pies==2.6.7
 platformdirs==2.6.0
     # via pylint
 prospector[with_everything]==1.7.7
-    # via -r ./requirements.in
+    # via -r requirements.in
 pycodestyle==2.8.0
     # via
     #   flake8
@@ -112,21 +112,12 @@ toml==0.10.2
     # via
     #   prospector
     #   vulture
-tomli==2.0.1
-    # via
-    #   build
-    #   mypy
-    #   pep517
-    #   pylint
 tomlkit==0.11.6
     # via pylint
 trove-classifiers==2022.12.1
     # via pyroma
 typing-extensions==4.4.0
-    # via
-    #   astroid
-    #   mypy
-    #   pylint
+    # via mypy
 urllib3==1.26.13
     # via requests
 vulture==2.6
